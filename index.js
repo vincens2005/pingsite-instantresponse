@@ -1,7 +1,7 @@
 var express = require('express');
 const https = require('https');
 const http = require('http');
-const { request, response } = require('express');
+var port = process.env.PORT || 5500
 var app = express();
 app.get("/:urltoping", (request, response) => {
     response.writeHead(200, {
@@ -51,4 +51,4 @@ app.get("/", (request, response) => {
     `);
     response.end()
 });
-app.listen(5500);
+app.listen(port);
